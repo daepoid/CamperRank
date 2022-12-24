@@ -22,7 +22,7 @@ import { UpdateTestCaseDto } from './dto/update-test-case.dto';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { SimpleTestCaseDto } from './dto/simple-testCase.dto';
 import { isFalsy } from '../utils/boolUtils';
-import { AuthGuard } from '@nestjs/passport';
+import { JwtAuthGuard } from '../guard/jwt-auth.guard';
 
 @Controller('test-case')
 @ApiTags('테스트 케이스 API')
@@ -30,7 +30,7 @@ export class TestCaseController {
   constructor(private readonly testCaseService: TestCaseService) {}
 
   @Post()
-  @UseGuards(AuthGuard('jwt'))
+  @UseGuards(JwtAuthGuard)
   @HttpCode(HttpStatus.CREATED)
   @ApiOperation({
     summary: '테스트 케이스 추가 API',
@@ -98,7 +98,7 @@ export class TestCaseController {
   }
 
   @Patch(':testCaseId')
-  @UseGuards(AuthGuard('jwt'))
+  @UseGuards(JwtAuthGuard)
   @HttpCode(HttpStatus.OK)
   @ApiOperation({
     summary: '테스트 케이스 수정 API',
@@ -135,7 +135,7 @@ export class TestCaseController {
   }
 
   @Delete(':testCaseId')
-  @UseGuards(AuthGuard('jwt'))
+  @UseGuards(JwtAuthGuard)
   @HttpCode(HttpStatus.OK)
   @ApiOperation({
     summary: '테스트 케이스 삭제 API',
