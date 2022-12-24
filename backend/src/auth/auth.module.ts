@@ -14,9 +14,9 @@ import { User } from '../users/entities/user.entity';
     TypeOrmModule.forFeature([User]),
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.register({
-      secret: 'Secret1234',
+      secret: 'Securely1234',
       signOptions: {
-        expiresIn: 86400,
+        expiresIn: 60 * 30,
       },
     }),
   ],

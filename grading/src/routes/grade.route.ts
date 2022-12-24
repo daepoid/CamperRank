@@ -1,10 +1,9 @@
-import { Router } from "express";
-import { gradingController, startDocker, startGrade } from "../controllers/grade.controller";
+import { Router } from 'express';
+import { gradeV1, gradeV2 } from '../controllers/grade.controller';
 
 const router = Router();
 
-router.post("/v1/grading", gradingController);
-router.post("/v1/grade", startGrade);
-router.post("/v1/docker", startDocker);
+router.post('/v1/grading', gradeV1);
+router.post('/v1/docker', gradeV2);
 
 export = router;
