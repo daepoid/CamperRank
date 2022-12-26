@@ -1,12 +1,16 @@
+# 개선
+프로젝트 기간 이후 부족한 부분에 대한 개선을 위한 레포입니다.
+
+
 # CamperRank
 
 > *라이브 코딩 면접을 준비하는데 어려움이 있었습니다. <br/> 팀 단위로 진행되는 알고리즘 문제 풀이 대회를 준비하는데 어려움이 있었습니다. <br/> 그런 어려움을…*
 <br/><br/>개발 기간: 2022.11.07 ~ 2022.12.16
 > 
-
 <br/>
 
 # ✨프로젝트 소개
+
 
 <img src="https://user-images.githubusercontent.com/46220202/207907303-39b20ea4-b9d5-4996-9d7f-643d852f0740.png" width="900" height="300"/>
 
@@ -95,21 +99,8 @@ yarn start
 
 <br>
 
-# 🎯프로젝트 주요 기능
+# 자세한 내용은 아래 링크로
 
-|<img src="https://user-images.githubusercontent.com/46220202/207910934-2f993898-927f-42dc-8c1b-4822e75e7771.gif" width= "400" height="400"/>|<img src="https://user-images.githubusercontent.com/62196278/208003205-8a58dac4-3a5d-43e4-b69b-839a43749a98.gif" width= "400" height="400"/>|
-|:----:|:----:|
-|온라인으로 PS 문제를 해결할 수 있습니다.|공동 편집 기능으로 같이 코드를 편집할 수 있습니다.|
-|<img src="https://user-images.githubusercontent.com/62196278/208002548-e1054df1-8fae-44e0-a3cf-06778bcbdbee.png" width= "400" height="400"/>|<img src="https://user-images.githubusercontent.com/46220202/207912548-fea8e9b1-81b2-447f-bb9d-fccd5dc38eff.png" width= "400" height="400"/>|
-|문제를 풀면서 음성으로 그룹원들과 대화를 나눌 수 있습니다.|문제를 풀어보세요!|
+[클릭](https://github.com/boostcampwm-2022/Web31-CamperRank)
 
-<br/>
-
-# 🥛Team 요구르트
-|J083_박세현|J101_서혜민|J153_이재권|J194_조진우|
-|:----:|:----:|:----:|:----:|
-|<img src="https://user-images.githubusercontent.com/46220202/200989306-054bb7c9-ff16-4258-a146-ce1cd6baac12.PNG" width="180">|<img src="https://user-images.githubusercontent.com/75344562/200989394-68ff559e-ce85-46b7-ae8c-4d9ea0d6e5f6.png" width="180">|<img src="https://user-images.githubusercontent.com/62196278/200988892-86c0d6bf-4daa-46b7-a429-1d857b1003d8.jpg" width="180">|<img src="https://user-images.githubusercontent.com/56079377/200989077-7aacef03-2b3a-4b56-b0b3-866ee07f0e79.jpg" width="180">
-|[@daepoid](https://github.com/daepoid)|[@tommy16102](https://github.com/tommy16102)|[@zsr12383](https://github.com/zsr12383)|[@sinterhoo](https://github.com/sinterhoo)|
-
-<br/>
 
