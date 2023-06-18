@@ -60,7 +60,7 @@ export class SolvedController {
     return failList.length === 0 ? SolvedResult.Success : SolvedResult.Fail;
   }
 
-  // @Post()
+  @Post()
   @HttpCode(HttpStatus.CREATED)
   @ApiOperation({
     summary: '문제 답안 제출 기록 생성 API',
@@ -121,62 +121,62 @@ export class SolvedController {
     }
   }
 
-  @Post()
-  @HttpCode(HttpStatus.CREATED)
-  @ApiOperation({
-    summary: '문제 답안 제출 기록 생성 API',
-    description: '문제 답안 제출 기록을 생성한다.',
-  })
-  @ApiResponse({
-    description:
-      '문제 식별 아이디, 사용자 식별 아이디, 문제 코드, 정답 결과를 담아 저장한다.',
-    status: HttpStatus.CREATED,
-    type: SimpleSolvedDto,
-  })
-  @UsePipes(ValidationPipe)
-  async gradeWithSaveV3(@Body() createSolvedDto: CreateSolvedDto) {
-    const gradeSolvedDtoList = await this.createToGrade(
-      createSolvedDto,
-      0,
-      1000,
-      true,
-    );
+  // @Post()
+  // @HttpCode(HttpStatus.CREATED)
+  // @ApiOperation({
+  //   summary: '문제 답안 제출 기록 생성 API',
+  //   description: '문제 답안 제출 기록을 생성한다.',
+  // })
+  // @ApiResponse({
+  //   description:
+  //     '문제 식별 아이디, 사용자 식별 아이디, 문제 코드, 정답 결과를 담아 저장한다.',
+  //   status: HttpStatus.CREATED,
+  //   type: SimpleSolvedDto,
+  // })
+  // @UsePipes(ValidationPipe)
+  // async gradeWithSaveV3(@Body() createSolvedDto: CreateSolvedDto) {
+  //   const gradeSolvedDtoList = await this.createToGrade(
+  //     createSolvedDto,
+  //     0,
+  //     1000,
+  //     true,
+  //   );
+  //
+  //   const gradeResultList = await Promise.all(
+  //     gradeSolvedDtoList.map((value) => {
+  //       return this.httpService.axiosRef
+  //         .post(
+  //           `${this.getServerlessURL(
+  //             createSolvedDto.language,
+  //           )}?blocking=true&result=true`,
+  //           { ...value },
+  //         )
+  //         .then((response) => response.data)
+  //         .catch((err) => {
+  //           console.error(err);
+  //         });
+  //     }),
+  //   );
+  //
+  //   const gradeResultDTO = gradeResultList.map((value) => {
+  //     return new GradeResultSolvedDto(value);
+  //   });
+  //
+  //   const solvedResult = this.checkSolvedResult(gradeResultList);
+  //
+  //   await this.solvedService.updateResult(
+  //     gradeResultList[0].solvedId,
+  //     solvedResult,
+  //   );
+  //
+  //   return {
+  //     solvedId: gradeResultList[0].solvedId,
+  //     solvedResult: solvedResult,
+  //     ...gradeResultDTO,
+  //   };
+  // }
 
-    const gradeResultList = await Promise.all(
-      gradeSolvedDtoList.map((value) => {
-        return this.httpService.axiosRef
-          .post(
-            `${this.getServerlessURL(
-              createSolvedDto.language,
-            )}?blocking=true&result=true`,
-            { ...value },
-          )
-          .then((response) => response.data)
-          .catch((err) => {
-            console.error(err);
-          });
-      }),
-    );
-
-    const gradeResultDTO = gradeResultList.map((value) => {
-      return new GradeResultSolvedDto(value);
-    });
-
-    const solvedResult = this.checkSolvedResult(gradeResultList);
-
-    await this.solvedService.updateResult(
-      gradeResultList[0].solvedId,
-      solvedResult,
-    );
-
-    return {
-      solvedId: gradeResultList[0].solvedId,
-      solvedResult: solvedResult,
-      ...gradeResultDTO,
-    };
-  }
-
-  // @Post('test-case')
+  @Post('test-case')
   @HttpCode(HttpStatus.OK)
   @ApiOperation({
     summary: '문제 답안 제출 기록 생성 API',
@@ -211,45 +211,45 @@ export class SolvedController {
     return { ...gradeResultList };
   }
 
-  @Post('test-case')
-  @HttpCode(HttpStatus.OK)
-  @ApiOperation({
-    summary: '문제 답안 제출 기록 생성 API',
-    description: '문제 답안 제출 기록을 생성한다.',
-  })
-  @ApiResponse({
-    description:
-      '문제 식별 아이디, 사용자 식별 아이디, 문제 코드, 정답 결과를 담아 저장한다.',
-    status: HttpStatus.OK,
-    type: SimpleSolvedDto,
-  })
-  @UsePipes(ValidationPipe)
-  async gradeWithoutSaveV3(@Body() createSolvedDto: CreateSolvedDto) {
-    const gradeSolvedDtoList = await this.createToGrade(
-      createSolvedDto,
-      0,
-      3,
-      false,
-    );
-
-    const gradeResultList = await Promise.all(
-      gradeSolvedDtoList.map((value) => {
-        return this.httpService.axiosRef
-          .post(
-            `${this.getServerlessURL(
-              createSolvedDto.language,
-            )}?blocking=true&result=true`,
-            { ...value },
-          )
-          .then((response) => response.data)
-          .catch((err) => {
-            console.error(err);
-          });
-      }),
-    );
-
-    return { ...gradeResultList };
-  }
+  // // @Post('test-case')
+  // @HttpCode(HttpStatus.OK)
+  // @ApiOperation({
+  //   summary: '문제 답안 제출 기록 생성 API',
+  //   description: '문제 답안 제출 기록을 생성한다.',
+  // })
+  // @ApiResponse({
+  //   description:
+  //     '문제 식별 아이디, 사용자 식별 아이디, 문제 코드, 정답 결과를 담아 저장한다.',
+  //   status: HttpStatus.OK,
+  //   type: SimpleSolvedDto,
+  // })
+  // @UsePipes(ValidationPipe)
+  // async gradeWithoutSaveV3(@Body() createSolvedDto: CreateSolvedDto) {
+  //   const gradeSolvedDtoList = await this.createToGrade(
+  //     createSolvedDto,
+  //     0,
+  //     3,
+  //     false,
+  //   );
+  //
+  //   const gradeResultList = await Promise.all(
+  //     gradeSolvedDtoList.map((value) => {
+  //       return this.httpService.axiosRef
+  //         .post(
+  //           `${this.getServerlessURL(
+  //             createSolvedDto.language,
+  //           )}?blocking=true&result=true`,
+  //           { ...value },
+  //         )
+  //         .then((response) => response.data)
+  //         .catch((err) => {
+  //           console.error(err);
+  //         });
+  //     }),
+  //   );
+  //
+  //   return { ...gradeResultList };
+  // }
 
   @Get()
   @HttpCode(HttpStatus.OK)
